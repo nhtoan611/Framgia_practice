@@ -47,3 +47,9 @@ group :development, :test do
   gem "railroady"
   gem "autoprefixer-rails"
 end
+
+group :test do
+  gem "rails-controller-testing", "1.0.2"
+  gem "minitest-reporters", "1.1.14"
+  gem "guard-minitest", "2.4.4"
+end
