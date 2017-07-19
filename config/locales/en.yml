@@ -56,6 +56,9 @@ en:
         help: "Help"
         home: "Home"
         login: "Login"
+        profile: "Profile"
+        settings: "Settings"
+        logout: "Log out"
     footer:
         content1: "The"
         link1: "Ruby on Rails Tutorial"
@@ -74,3 +77,9 @@ en:
   error:
     the_form: "The form contains"
     error: "error"
+    login_fail: "Invalid email/password combination"
+  session:
+    title: "Log in"
+    button: "Log in"
+    signup: "Sign up now!"
+    new_user: "New user?"

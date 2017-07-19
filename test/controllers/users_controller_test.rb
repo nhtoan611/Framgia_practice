@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
 
@@ -6,4 +6,5 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     get signup_path
     assert_response :success
   end
+
 end
