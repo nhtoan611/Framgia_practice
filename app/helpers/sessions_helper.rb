@@ -13,6 +13,7 @@ module SessionsHelper
   def current_user
     session_id = session[:user_id]
     cookies_id = cookies.signed[:user_id]
+
     if session_id
       @current_user ||= User.find_by id: session_id
     elsif cookies_id
@@ -44,5 +45,14 @@ module SessionsHelper
     return unless user && user.authenticated?(cookies[:remember_token])
     log_in user
     @current_user = user
+  end
+
+  def redirect_back_or default
+    redirect_to session[:forwarding_url] || default
+    session.delete :forwarding_url
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
   end
 end
