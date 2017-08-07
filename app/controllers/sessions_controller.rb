@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
     user = User.find_by email: session[:email].downcase
 
     if user && user.authenticate(session[:password])
-      login_success user
+      if user.activated?
+        login_success user
+      else
+        not_activate
+      end
     else
       login_fail
     end
@@ -28,5 +32,10 @@ class SessionsController < ApplicationController
   def login_fail
     flash.now[:danger] = t "error.login_fail"
     render :new
+  end
+
+  def not_activate
+    flash[:warning] = t "users.not_active"
+    redirect_to root_url
   end
 end
