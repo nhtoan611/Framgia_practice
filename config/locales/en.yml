@@ -83,6 +83,11 @@ en:
     list_header: "All users"
     user_delete: "delete"
     user_confirm: "You sure?"
+    not_active: "Account not activated.
+      Check your email for the activation link."
+    create_success: "Please check your email to activate your account."
+    active_success: "Account activated!"
+    active_fail: "Invalid activation link"
   edit:
     title: "Edit user"
     submit: "Save changes"
@@ -98,3 +103,13 @@ en:
     signup: "Sign up now!"
     new_user: "New user?"
     remember: "Remember me on this computer"
+  mail:
+    greeting: "Hi"
+    content: "Welcome to the Sample App!
+      Click on the link below to activate your account:"
+    header: "Sample App"
+    comma: ","
+    link: "Active"
+  password:
+    title: "User#password_reset"
+    findme: "find me in app/views/user_mailer/password_reset.text.erb"

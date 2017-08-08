@@ -15,16 +15,16 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate page: params[:page]
+    @users = User.active.paginate page: params[:page]
   end
 
   def create
     @user = User.new user_params
 
     if user.save
-      log_in user
-      flash[:success] = t "user.welcome_to_app"
-      redirect_to user
+      user.send_activation_email
+      flash[:info] = t "users.create_success"
+      redirect_to root_url
     else
       render :new
     end
